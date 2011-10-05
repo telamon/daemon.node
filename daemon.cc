@@ -38,9 +38,12 @@ Handle<Value> Start(const Arguments& args) {
 
 // Close Standard IN/OUT/ERR Streams
 Handle<Value> CloseIO(const Arguments& args) {
-	close(STDIN_FILENO);
-	close(STDOUT_FILENO);
-	close(STDERR_FILENO);
+	// close(STDIN_FILENO);
+	// close(STDOUT_FILENO);
+	// close(STDERR_FILENO);
+  freopen("dev/null","r",stdin);
+  freopen("dev/null","w",stdout);
+  freopen("dev/null","w",stderr);
 }
 
 // File-lock to make sure that only one instance of daemon is running.. also for storing PID

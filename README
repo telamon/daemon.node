@@ -1,3 +1,7 @@
+Fork info:
+Modified daemon.closeIO() to redirect streams to /dev/null as suggested by dswift
+in the comments for the article in the linked below.
+
 Daemon Addon for Node.js
 
 To build this module, type:
